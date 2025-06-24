@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbs Estimator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    
+    <h1>CarbSense AI</h1>
+    <form  method= "post" class="general-form">
+        
+        <div class="toggle-group">
+        
+            <label class="unit-toggle"></label>
+            <label class="switch">
+                <input type="checkbox" id="unit-toggle" name="unit">
+                <span class="slider"></span>
+            </label>
+            <span class="unit-labels">kg / lbs</span>        
+        </div>
+
+        {{form.hidden_tag()}}
+
+        <label for="weight"> Weight
+        <span id="unit-label">(kg)</span></label> 
+        {{form.weight(class="input-number")}}
+
+        
+        <label for="TSS">TSS</label>
+        {{form.tss(class="input-number")}}
+
+        
+        <label for="IF">IF</label>      
+        {{form.int_factor(class="input-number")}}
+
+        <label for="kcal">kcal</label>  
+        {{form.kcal(class="input-number")}}
+        
+        <div class="toggle-group">
+            <label class="sex-toggle"></label>
+            <label class="switch">
+                <input type="checkbox" id="sex-toggle" name="sex">
+                <span class="slider"></span>
+            </label>
+            <span class="unit-labels">male / female</span> 
+        </div>
+        {{form.submit(class="calculate-button")}}
+
+    </form>
+
+<script>
+  const toggle = document.getElementById("unit-toggle");
+  const label = document.getElementById("unit-label");
+
+  // Función que actualiza el texto del label
+  function updateUnitLabel() {
+    label.textContent = toggle.checked ? "(lbs)" : "(kg)";
+  }
+
+  // Ejecutar al cargar la página
+  updateUnitLabel();
+
+  // Ejecutar cuando el usuario cambia el toggle
+  toggle.addEventListener("change", updateUnitLabel);
+</script>    
+</body>
+</html>
