@@ -29,6 +29,7 @@ def index():
         sex= 0 if sex_toggle == "on" else 1
 
         if units_toggle == "on":
+            weight= float(weight)
             weight/=2.205
 
         features= np.array([tss, kcal, weight, int_factor, sex]).reshape(1,-1)
