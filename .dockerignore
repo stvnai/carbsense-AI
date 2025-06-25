@@ -9,3 +9,4 @@ __pycache__/
 .gitignore
 DockerFile
 .dockerignore
+.github/
