@@ -3,7 +3,7 @@
 
 body {
     font-family:"Plus Jakarta Sans",  'Noto Sans', 'Arial', sans-serif;
-    background-color: #1E2126;
+    background-color: #141414;
     padding: 10px;
     margin-top: 0%;
     margin-bottom: 0%;
@@ -13,7 +13,7 @@ h1{
     text-align: center;
     font-family: "Plus Jakarta Sans", "Noto Sans";
     
-    color: #A5A4A6;
+    color: #CCCCCC;
     font-size: 35px;
     margin-bottom: 20px;
     
@@ -21,13 +21,13 @@ h1{
 
 h2{
     text-align: center;
-    color: #12749b;
+    color: #198FB3;
 }
 
 /* ***##### INPUT NUMBERS #####*** */
 
 .general-form {
-    color: #A5A4A6;
+    color: #CCCCCC;
     max-width: fit-content;
     margin: auto; 
 }
@@ -35,33 +35,34 @@ h2{
 label {
     display:block;
     margin-top: 3px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     font-weight: bold;
     font-size: 15px;
 }
 
 .input-number {
-    text-align: center;
+    text-align: left;
+    text-indent: 8px;
     font-size: medium;
     width: 215px;
-    height: 40px;
+    height: 30px;
     border: 2px solid transparent;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     border-radius: 15px;
-    background-color: #e6e6e6;
-    color: #1E2126;
+    background-color: #333333;
+    color: #CCCCCC;
 
 }
 
 .input-number:focus {
-  border-color: #05C7F2;
+  border-color: transparent;
   outline: none;
 }
 
 .input-number::placeholder {
-    color: #888;
-    opacity: 0.7;
-    font-style: oblique;
+    color: #999999;
+    opacity: 0.5;
+    font-style: normal;
 }
 
 
@@ -71,25 +72,25 @@ label {
 .calculate-button {
     display: block;
     margin: auto;
-    margin-top: 20px;
-    background-color: #1E2126;
-    color: #05C7F2;
-    padding: 8px 25px;
-    border: 2px solid #12749b;
-    border-radius: 15px;
+    margin-top: 25px;
+    background-color: #141414;
+    color: #10CDE6;
+    padding: 8px 73px;
+    border: 1.5px solid #10CDE6;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.4s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease-out, transform 0.2s ease-out;
     font-family: Noto Sans;
     font-weight: bold;
     
 }
 
 .calculate-button:hover {
-    background-color: #05C7F2;
-    border: 2px solid #05C7F2;
-    color: #1E2126;
-    transform: scale(1.05);
+    background-color: #10CDE6;
+    border: 1px solid #10CDE6;
+    color: #050505;
+    transform: scale(1.03);
     
 }
 
@@ -129,7 +130,7 @@ label {
 .slider {
     position: absolute;
     cursor: pointer;
-    background-color: #12749b;
+    background-color: #198FB3;
     border-radius: 50px;
     top: 0;
     left: 0;
@@ -145,13 +146,13 @@ label {
     width: 15px;
     left: 2px;
     bottom: 2.5px;
-    background-color: #e6e6e6;
+    background-color: #CCCCCC;
     transition: 0.3s;
     border-radius: 50%;
 }
 
 input:checked + .slider {
-    background-color: #05C7F2;
+    background-color: #10CDE6;
 }
 
 input:checked + .slider::before {
@@ -191,11 +192,11 @@ input:checked + .slider::before {
     margin: auto;
     align-items: center;
     margin-top: 50px;
-    background-color: #1E2126;
-    color: #05C7F2;
-    padding: 8px 30px;
-    border: 2px solid #12749b;
-    border-radius: 15px;
+    background-color: #141414;
+    color: #10CDE6;
+    padding: 8px 73px;
+    border: 1.5px solid #10CDE6;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.4s ease, transform 0.2s ease;
@@ -205,9 +206,9 @@ input:checked + .slider::before {
 }
 
 .reset-button:hover {
-    background-color: #05C7F2;
-    border: 2px solid #05C7F2;
-    color: #1E2126;
+    background-color: #10CDE6;
+    border: 2px solid #10CDE6;
+    color: #050505;
     transform: scale(1.05);
     
     
