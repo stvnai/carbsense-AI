@@ -8,7 +8,9 @@ def validate_username(form, field):
         raise ValidationError("Only letters, numbers, '-', '_' or '.' are allowed.")
 
 
-# Data fields
+            ### DATA FIELDS ###
+
+
 class InputForm(FlaskForm):
     
     tss= IntegerField(
@@ -44,7 +46,9 @@ class InputForm(FlaskForm):
     
     submit= SubmitField("Calculate")
 
-# Login
+
+        ### LOGIN FIELDS ###
+
 
 class LoginForm(FlaskForm):
     username= StringField(
@@ -67,7 +71,9 @@ class LoginForm(FlaskForm):
 
     submit_user= SubmitField("Sign In")
 
-# Sign Up
+
+        ### SIGNUP FIELDS ###
+        
 
 class SignupForm(FlaskForm):
     email= EmailField(
@@ -94,5 +100,7 @@ class SignupForm(FlaskForm):
             Length(min=8, max=50)
         ]
     )
+
+    submit_signup= SubmitField("Register")
 
 

@@ -3,17 +3,16 @@ import joblib
 import numpy as np
 from app.forms import InputForm, LoginForm, SignupForm
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
-from app.auth.controller import authenticate_user
 from app.decorators.auth_decorators import login_required
-from werkzeug.security import generate_password_hash
+from app.db.user_queries import user_exists, insert_user, auth_user
+
+
 
 model_path= os.path.join(os.path.dirname(__file__), "model", "cho-estimator.pkl" )
-
 model= joblib.load(model_path)
-
 main= Blueprint("main", __name__)
 
-### LOGIN ###
+### LOGIN ROUTE ###
 
 @main.route("/login", methods=["GET", "POST"])
 def login():
@@ -24,18 +23,19 @@ def login():
         username= login_form.username.data
         password= login_form.password.data
 
-        user_id= authenticate_user(username, password)
+        user_id= auth_user(username, password)
         if user_id:
             session["user_id"] = user_id
             return redirect(url_for("main.index"))
         
+        
         else:
-            flash("Wrong username or password", "danger")
+            flash("Wrong username or password.", "danger")
             return redirect(url_for("main.login"))
 
     return render_template("login.html", login_form=LoginForm())
 
-### SIGN UP ###
+### SIGNUP ROUTE ###
 
 @main.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -47,11 +47,21 @@ def signup():
         username= signup_form.username.data
         password= signup_form.password.data
 
-        password_hashed= generate_password_hash(password)
 
+        if user_exists(username, email):
+            flash("Username or email already exists.", "danger")
+            return redirect(url_for("main.signup"))
         
+        if insert_user(username, email, password):
+            flash("Registration completed successfully.", "success")
+            return redirect(url_for("main.login"))
+        
+        else:
+            flash("Error during registration process. Try Later.", "danger")
+        
+    
+    return render_template("signup.html", signup_form=signup_form)
 
-    return render_template("login.html", login_form=LoginForm())
 
 ### MAIN FORM ###
 

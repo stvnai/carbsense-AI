@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Start Session</h1>
+    <h1>Sign In</h1>
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
@@ -41,17 +41,23 @@
         <div>
             
             {% for error in login_form.username.errors %}
-            <span class="form-error">{{ error }}</span>
+            <span class="flash-message">{{ error }}</span>
             {% endfor %}
             
             {% for error in login_form.password.errors %}
-            <span class="form-error">{{ error }}</span>
+            <span class="flash-message">{{ error }}</span>
             {% endfor %}
             
             
         </div>
 
         {{login_form.submit_user(class="login-button")}}
+
+        <div class="sign-link">
+            <p class="account-actions">Don't have an account?</p> 
+            <a href="{{ url_for('main.signup') }}", class="sign-link">Sign Up</a>        
+
+        </div>
 
     </form>
     

@@ -1,3 +1,7 @@
+                        
+                        
+                        
+                        /* *******##### BODY AND HEADERS SETTINGS #####******* */
 
 /* ***##### BODY #####*** */
 
@@ -8,7 +12,10 @@ body {
     margin-top: 0%;
     margin-bottom: 0%;
 }
+
+
 /* ***##### HEADERS #####*** */
+
 h1{
     text-align: center;
     font-family: "Plus Jakarta Sans", "Noto Sans";
@@ -26,20 +33,79 @@ h2{ margin-top: 80px;
     color: #198FB3;
 }
 
-.flash-message {
-    position: relative;
-    color: crimson;
-    font-size: 10px;
-    text-align: center;
-    display: block;
-    margin-top: 5px;
+
+
+                        /* *******##### INPUT FIELDS #####******* */
+
+/* ***##### INPUT LOGIN DATA #####*** */
+
+.input-login {
+    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+    text-align: left;
+    text-indent: 8px;
+    font-size: medium;
+    width: 215px;
+    height: 30px;
+    border: 2px solid transparent;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    background-color: #333333;
+    color: #CCCCCC;
+
+}
+
+.input-login:focus {
+    border-color: transparent;
+    outline: none;
+}
+
+.input-login::placeholder {
+    color: #999999;
+    opacity: 0.5;
+    font-style: normal;
 }
 
 
+/* ***##### INPUT SIGN UP DATA #####*** */
+                    
+.input-signup {
+    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+    text-align: left;
+    text-indent: 8px;
+    font-size: medium;
+    width: 215px;
+    height: 30px;
+    border: 2px solid transparent;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    background-color: #333333;
+    color: #CCCCCC;
 
-/* ***##### INPUT NUMBERS #####*** */
+}
+
+.input-signup:focus {
+    border-color: transparent;
+    outline: none;
+}
+
+.input-signup::placeholder {
+    color: #999999;
+    opacity: 0.5;
+    font-style: normal;
+}
+
+
+/* ***##### INPUT CALCULATE DATA #####*** */
 
 .general-form {margin-top: 20px;
+    color: #CCCCCC;
+    max-width: fit-content;
+    margin: auto; 
+}
+
+.account-actions {margin-top: 20px;
+    font-size: 13px;
+    font-family: "Plus Jakarta Sans", "Noto Sans" sans-serif;
     color: #CCCCCC;
     max-width: fit-content;
     margin: auto; 
@@ -77,35 +143,146 @@ label {
     opacity: 0.5;
     font-style: normal;
 }
-.input-login {
-    text-align: left;
-    text-indent: 8px;
-    font-size: medium;
-    width: 215px;
-    height: 30px;
-    border: 2px solid transparent;
-    margin-bottom: 5px;
-    border-radius: 15px;
-    background-color: #333333;
-    color: #CCCCCC;
 
+
+/* ***##### INPUT UNITS DATA #####*** */
+
+.unit-labels {
+    padding-bottom: 4%;
+    display: flex;
+    text-align: center;
+    font-size: 12px;
+    color: #CCCCCC;   
 }
 
-.input-login:focus {
-  border-color: transparent;
-  outline: none;
-}
-
-.input-login::placeholder {
-    color: #999999;
-    opacity: 0.5;
-    font-style: normal;
+.unit-toggle {
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: baseline;
+    gap: 10px;
 }
 
 
 
-/* ***##### BUTTON #####*** */
+                    /* *******##### OUTPUT FIELDS #####******* */
 
+/* ***##### RESULTS PAGE #####*** */
+
+.prediction-value {
+    margin-top: 5px;
+    text-align: center;
+    align-items: center;
+    font-size: 75px;
+}
+
+
+
+                    /* *******##### BUTTONS #####******* */
+
+/* ***##### REGISTER BUTTON #####*** */
+
+.signup-button {
+display: block;
+margin: auto;
+margin-top: 25px;
+margin-bottom: 20px;
+background-color: #141414;
+color: #10CDE6;
+padding: 8px 73px;
+border: 1px solid #10CDE6;
+border-radius: 20px;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.2s ease-out, transform 0.2s ease-out;
+font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+font-weight: bold;
+
+}
+
+.signup-button:hover {
+background-color: #10CDE6;
+border: 1px solid #10CDE6;
+color: #050505;
+transform: scale(1.03);
+
+}
+
+.signup-button:active {
+transform: scale(0.95);
+
+}
+
+
+/* ### LOGIN BUTTON ### */
+
+.login-button {
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    background-color: #141414;
+    color: #10CDE6;
+    padding: 8px 73px;
+    border: 1px solid #10CDE6;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease-out, transform 0.2s ease-out;
+    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+    font-weight: bold;
+    
+}
+
+.login-button:hover {
+    background-color: #10CDE6;
+    border: 1px solid #10CDE6;
+    color: #050505;
+    transform: scale(1.03);
+    
+    
+}
+
+.login-button:active {
+    transform: scale(0.95);
+    
+}
+
+
+/* ### LOGOUT BUTTON ### */
+
+.logout-button {
+    position: fixed;
+    display: block;
+    align-items: left;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    background-color: #141414;
+    color: #10CDE6;
+    padding: 5px 20px;
+    border: 1px solid #10CDE6;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+    font-family: Noto Sans;
+    font-weight: bold;
+    
+}
+
+.logout-button:hover {
+    background-color: #141414;
+    border: 1px solid crimson;
+    color: crimson;
+    transform: scale(1.03);  
+}
+
+.logout-button:active {
+    transform: scale(0.95);
+}
+
+
+/* ***##### CALCULATE BUTTON #####*** */
+                                    
 .calculate-button {
     display: block;
     margin: auto;
@@ -118,22 +295,75 @@ label {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.2s ease-out, transform 0.2s ease-out;
-    font-family: Noto Sans;
-    font-weight: bold;
-    
+    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+    font-weight: bold;  
 }
 
 .calculate-button:hover {
     background-color: #10CDE6;
     border: 1px solid #10CDE6;
     color: #050505;
-    transform: scale(1.03);
-    
+    transform: scale(1.03);   
 }
 
 .calculate-button:active {
-    transform: scale(0.95);
+    transform: scale(0.95);  
+}
+
+
+/* ***##### RESET BUTTON #####*** */
+
+.reset-button {
+    display: block;
+    margin: auto;
+    align-items: center;
+    margin-top: 50px;
+    background-color: #141414;
+    color: #10CDE6;
+    padding: 8px 73px;
+    border: 1.5px solid #10CDE6;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+    font-family: Noto Sans;
+    font-weight: bold;
     
+}
+
+.reset-button:hover {
+    background-color: #10CDE6;
+    border: 2px solid #10CDE6;
+    color: #050505;
+    transform: scale(1.05);  
+}
+
+
+/* ***##### SIGNUP/SIGNIN LINKS #####*** */
+
+.sign-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+}
+
+.sign-link a {position: inherit;
+    color: #198FB3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sign-link a:visited {
+    color: #198FB3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sign-link a:hover {
+    color: #10CDE6;
+    text-decoration: underline;
 }
 
 
@@ -196,120 +426,46 @@ input:checked + .slider::before {
     transform: translateX(15px);
 }
 
-.unit-labels {
-    padding-bottom: 4%;
-    display: flex;
+
+
+                    /* *****### FLASH MESSAGES AND ALERTS ###***** */
+
+/* ### FLASH MESSAGES GENERAL SETTINGS ### */
+
+.flash-message {
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 5px;
     text-align: center;
     font-size: 12px;
-    color: #A5A4A6;
-    
-    
-}
-
-.unit-toggle {
-    display: flex;
-    flex-direction:row-reverse;
-    align-items: baseline;
-    gap: 10px;
-}
-
-
-
-/* ***##### RESULTS PAGE #####*** */
-
-.prediction-value {
-    margin-top: 5px;
-    text-align: center;
-    align-items: center;
-    font-size: 75px;
-}
-
-.reset-button {
-    display: block;
-    margin: auto;
-    align-items: center;
-    margin-top: 50px;
-    background-color: #141414;
-    color: #10CDE6;
-    padding: 8px 40px;
-    border: 1.5px solid #10CDE6;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: background-color 0.4s ease, transform 0.2s ease;
-    font-family: Noto Sans;
     font-weight: bold;
-    
 }
 
-.reset-button:hover {
-    background-color: #10CDE6;
-    border: 2px solid #10CDE6;
-    color: #050505;
-    transform: scale(1.05);
+
+/* ### SUCCESS FLASH MESSAGES ### */
+                    
+.flash-message.success {
     
-    
+    color: #78FF6E;
+    ;
 }
 
-.login-button { position: inherit;
+
+/* ### DANGER FLASH MESSAGES ### */
+
+.flash-message.danger {
     
-    display: block;
-    margin: auto;
-    align-items: center;
-    margin-top: 50px;
-    background-color: #141414;
-    color: #10CDE6;
-    padding: 5px 20px;
-    border: 1.5px solid #10CDE6;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: background-color 0.4s ease, transform 0.2s ease;
-    font-family: Noto Sans;
-    font-weight: bold;
-    
+    color: #E6474C;
+    ;
 }
 
-.login-button:hover {
-    background-color: #10CDE6;
-    border: 2px solid #10CDE6;
-    color: #050505;
-    transform: scale(1.05);
-    
-    
-}
 
-.logout-button {
-    position: fixed;
-    display: block;
-    align-items: left;
-    margin-top: 20px;
-    margin-bottom: 100px;
-    background-color: #141414;
-    color: #10CDE6;
-    padding: 5px 20px;
-    border: 1.5px solid #10CDE6;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.4s ease, transform 0.2s ease;
-    font-family: Noto Sans;
-    font-weight: bold;
-    
-}
 
-.logout-button:hover {
-    background-color: #141414;
-    border: 2px solid crimson;
-    color: crimson;
-    transform: scale(1.03);
-    
-    
-}
+                    /* *****### ANOTHER GENERAL SETTINGS ###***** */
 
-.logout-button:active {
-    transform: scale(0.95);
-}
+
 /* ***##### DEVICES #####*** */
 
 @media (max-width: 580px) {
