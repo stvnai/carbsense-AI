@@ -8,7 +8,7 @@ from app.db.user_queries import user_exists, insert_user, auth_user
 
 
 
-model_path= os.path.join(os.path.dirname(__file__), "model", "cho-estimator.pkl" )
+model_path= "/model/cho-estimator.pkl"
 model= joblib.load(model_path)
 main= Blueprint("main", __name__)
 
