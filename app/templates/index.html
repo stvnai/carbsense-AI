@@ -13,6 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <form action="{{ url_for('main.logout') }}" method="get">
+        <button type="submit" class="logout-button">Log Out</button>
+    </form>
     
     
     <h1>CarbSense AI</h1>

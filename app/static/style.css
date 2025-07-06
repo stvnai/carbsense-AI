@@ -15,18 +15,31 @@ h1{
     
     color: #CCCCCC;
     font-size: 35px;
+    margin-top: 80px;
     margin-bottom: 20px;
     
 }
 
-h2{
+h2{ margin-top: 80px;
+    margin-bottom: 20px;
     text-align: center;
     color: #198FB3;
 }
 
+.flash-message {
+    position: relative;
+    color: crimson;
+    font-size: 10px;
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+}
+
+
+
 /* ***##### INPUT NUMBERS #####*** */
 
-.general-form {
+.general-form {margin-top: 20px;
     color: #CCCCCC;
     max-width: fit-content;
     margin: auto; 
@@ -64,10 +77,34 @@ label {
     opacity: 0.5;
     font-style: normal;
 }
+.input-login {
+    text-align: left;
+    text-indent: 8px;
+    font-size: medium;
+    width: 215px;
+    height: 30px;
+    border: 2px solid transparent;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    background-color: #333333;
+    color: #CCCCCC;
+
+}
+
+.input-login:focus {
+  border-color: transparent;
+  outline: none;
+}
+
+.input-login::placeholder {
+    color: #999999;
+    opacity: 0.5;
+    font-style: normal;
+}
 
 
 
-/* ***##### BUTTON#####*** */
+/* ***##### BUTTON #####*** */
 
 .calculate-button {
     display: block;
@@ -194,11 +231,11 @@ input:checked + .slider::before {
     margin-top: 50px;
     background-color: #141414;
     color: #10CDE6;
-    padding: 8px 73px;
+    padding: 8px 40px;
     border: 1.5px solid #10CDE6;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     transition: background-color 0.4s ease, transform 0.2s ease;
     font-family: Noto Sans;
     font-weight: bold;
@@ -214,7 +251,63 @@ input:checked + .slider::before {
     
 }
 
-.reset-button:active {
+.login-button { position: inherit;
+    
+    display: block;
+    margin: auto;
+    align-items: center;
+    margin-top: 50px;
+    background-color: #141414;
+    color: #10CDE6;
+    padding: 5px 20px;
+    border: 1.5px solid #10CDE6;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+    font-family: Noto Sans;
+    font-weight: bold;
+    
+}
+
+.login-button:hover {
+    background-color: #10CDE6;
+    border: 2px solid #10CDE6;
+    color: #050505;
+    transform: scale(1.05);
+    
+    
+}
+
+.logout-button {
+    position: fixed;
+    display: block;
+    align-items: left;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    background-color: #141414;
+    color: #10CDE6;
+    padding: 5px 20px;
+    border: 1.5px solid #10CDE6;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+    font-family: Noto Sans;
+    font-weight: bold;
+    
+}
+
+.logout-button:hover {
+    background-color: #141414;
+    border: 2px solid crimson;
+    color: crimson;
+    transform: scale(1.03);
+    
+    
+}
+
+.logout-button:active {
     transform: scale(0.95);
 }
 /* ***##### DEVICES #####*** */
