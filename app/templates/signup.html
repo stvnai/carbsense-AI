@@ -1,28 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <head>
+        <!--Links referencing Google Fonts -->
+    
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1>Sign Up</h1>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Varela+Round&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width"/>
+    <title>Carbsense AI Login</title>
+  </head>
+<body class="sign-up-body">
     {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <p class="flash-message {{ category }}">{{ message }}</p>
-            {% endfor %}
-
-        {% endif %}
-
+    {% if messages %}
+    {% for category, message in messages %}
+    <p class="flash-message {{ category }}">{{ message }}</p>
+    {% endfor %}
+    
+    {% endif %}
+    
     {% endwith %}
+    
+    <h1 id="sign-up-title" class="h1-signup">Sign Up</h1>
+    <h2 class="h2-signup">Register new user</h2>
 
     <form method="POST" class="general-form">
         {{ signup_form.hidden_tag() }}
@@ -58,11 +60,10 @@
 
         {{signup_form.submit_signup(class="signup-button")}}
 
-        <div class="sign-link">
-            <p class="account-actions">Already have an account?</p> 
-            <a href="{{ url_for('main.login') }}", class="sign-link">Sign In</a>        
-
-        </div>
+    <div class="resgister-container">
+    <p class="p-already-user">Already an acount?</p> 
+    <a href="{{url_for('main.login')}}" class="link-already-user">Sign in</a>
+    </div>
 
     </form>
     

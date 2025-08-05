@@ -1,27 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <head>
+        <!--Links referencing Google Fonts -->
+    
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Varela+Round&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width"/>
+    <title>Carbsense AI Login</title>
+  </head>
+<body class="result-body">
+
     <form action="{{ url_for('main.logout') }}" method="get">
         <button type="submit" class="logout-button">Log Out</button>
     </form>
 
-    <form action="{{ url_for('main.results') }}" method="get">
-        <h2>Estimated Carbs:</h2>
-        <h1 class="prediction-value">{{prediction}}g</h1>
+    <form action="{{ url_for('main.results') }}" method="get" class="results-form">
+        <h2 class="h2-prediction-value">Estimated Carbs:</h2>
+        <h1 class="h1-prediction-value">{{prediction}}g</h1>
 
-        <button type="submit" class="reset-button">Return</button>
+        <button type="submit" class="return-button">Return</button>
 
 
 

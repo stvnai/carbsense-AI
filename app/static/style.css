@@ -1,107 +1,350 @@
-                        
-                        
-                        
-                        /* *******##### BODY AND HEADERS SETTINGS #####******* */
-
-/* ***##### BODY #####*** */
-
-body {
-    font-family:"Plus Jakarta Sans",  'Noto Sans', 'Arial', sans-serif;
-    background-color: #141414;
-    padding: 10px;
-    margin-top: 0%;
-    margin-bottom: 0%;
-}
 
 
-/* ***##### HEADERS #####*** */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Varela+Round&display=swap');
 
-h1{
-    text-align: center;
-    font-family: "Plus Jakarta Sans", "Noto Sans";
+
+html {
+    color: #a4a8bb;
+    background: radial-gradient(circle,rgba(16, 18, 29, 50) 25%, rgba(0, 0, 0, 50) 100%); 
     
-    color: #CCCCCC;
-    font-size: 35px;
-    margin-top: 80px;
-    margin-bottom: 20px;
-    
+    font-family: "DM Sans", "Noto Sans", sans-serif !important; 
+    font-size: medium;   
 }
 
-h2{ margin-top: 80px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #198FB3;
-}
-
-
-
-                        /* *******##### INPUT FIELDS #####******* */
-
-/* ***##### INPUT LOGIN DATA #####*** */
-
-.input-login {
-    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
-    text-align: left;
-    text-indent: 8px;
-    font-size: medium;
-    width: 215px;
-    height: 30px;
-    border: 2px solid transparent;
-    margin-bottom: 5px;
-    border-radius: 15px;
-    background-color: #333333;
-    color: #CCCCCC;
-
-}
-
-.input-login:focus {
-    border-color: transparent;
-    outline: none;
-}
-
-.input-login::placeholder {
-    color: #999999;
-    opacity: 0.5;
-    font-style: normal;
-}
-
-
-/* ***##### INPUT SIGN UP DATA #####*** */
-                    
-.input-signup {
-    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
-    text-align: left;
-    text-indent: 8px;
-    font-size: medium;
-    width: 215px;
-    height: 30px;
-    border: 2px solid transparent;
-    margin-bottom: 5px;
-    border-radius: 15px;
-    background-color: #333333;
-    color: #CCCCCC;
-
-}
-
-.input-signup:focus {
-    border-color: transparent;
-    outline: none;
-}
-
-.input-signup::placeholder {
-    color: #999999;
-    opacity: 0.5;
-    font-style: normal;
-}
-
-
-/* ***##### INPUT CALCULATE DATA #####*** */
-
-.general-form {margin-top: 20px;
+.general-form {
+    margin-top: 4rem;
     color: #CCCCCC;
     max-width: fit-content;
     margin: auto; 
 }
+
+
+/* ***##### SIGN IN PAGE #####*** */
+
+
+.sign-in-body {
+    height: 43.75rem !important;
+    width: 21.875rem !important;
+    margin: 5rem auto;
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    border-radius: 0.938rem;
+    background-color: rgba(0, 0, 0, 20);
+    box-shadow: 0.125rem 0.125rem 0.625rem #10141ab2;
+}
+
+.h1-carbsense {
+    margin: 1.25rem 0.625rem !important;
+    color: #a1a8b4;
+    text-align: center;
+    font-family: "DM Sans", "Noto Sans", sans-serif !important;
+    font-size: 45px !important;  
+}
+
+.h2-sign-in {
+    margin: 0px 1.875rem 1.875rem 1.875rem;
+    color: #1b5f8d;
+    text-align: center;
+    font-family: "DM Sans", "Noto Sans", sans-serif;
+    font-size: 0.938rem; 
+}
+
+.h3-login-credentials {
+    margin: 0.938rem 3.125rem ;
+    color: #a1a8b4;
+    text-indent: 0.625rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    font-size: 0.938rem;
+}
+
+.input-login {
+    display: block;
+    height: 2.5rem;
+    width: 15.313rem;
+    margin: 0.625rem auto;
+    padding: auto;
+    text-indent: 0.625rem;
+    background-color: #1821327a;
+    color: #a1a8b4;
+    border: 0px solid transparent;
+    border-radius: 0.625rem;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.938rem;
+}
+
+::placeholder {
+    color: #a1a8b4;
+    opacity: .35;
+}
+
+.input-login:focus { 
+    outline: none !important;
+    border: 0px solid #1b5f8d;
+    box-shadow: 0 0 8px #237bb6;
+    }
+
+.login-button {
+    height: 2.5rem;
+    width: 8rem;
+    margin: 3.125rem auto;
+    border: 2px solid #237bb62a;
+    border-radius: 0.75rem;
+    background-color: rgba(27, 95, 141, 0.1);
+    color: #a4a8bb;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.875rem;
+    font-weight: bold;
+    display: block;
+    scale: 1.0;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.login-button:hover{
+    color: #237bb6;
+    background-color: rgba(27, 95, 141, 0.2);
+    transition: 0.2s ease-in-out;
+}
+
+.login-button:active {
+    transform: scale(0.98);
+    transition: 0.2s ease-out
+}
+
+a {
+    text-decoration: none !important; 
+    color: inherit; 
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.p-register-user{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+}
+
+.link-register-user{
+    display: block;
+    color: #1e959b;
+    margin-top: 2px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    scale: 1.0;
+    transition: 0.2s ease-out;
+
+}
+
+.link-register-user:hover {
+    display: block;
+    color: #237bb6;
+    margin-top: 5px;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    transition: 0.2s ease-in;
+    ;
+
+}
+
+.link-register-user:visited {
+
+    color: #1b5f8d
+}
+.link-register-user:visited:hover {
+
+    color: #237bb6
+}
+
+
+/* ***##### SIGN UP PAGE #####*** */
+
+.sign-up-body {
+    height: 43.75rem !important;
+    width: 21.875rem !important;
+    margin: 5rem auto;
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    border-radius: 0.938rem;
+    background-color: rgba(0, 0, 0, 20);
+    box-shadow: 0.125rem 0.125rem 0.625rem #10141ab2;
+}
+
+.h1-signup {
+    margin: 1.25rem 0.625rem !important;
+    color: #a1a8b4;
+    text-align: center;
+    font-family: "DM Sans", "Noto Sans", sans-serif !important;
+    font-size: 45px !important;  
+}
+
+.h2-signup {
+    margin: 0px 1.875rem 1.875rem 1.875rem;
+    color: #1b5f8d;
+    text-align: center;
+    font-family: "DM Sans", "Noto Sans", sans-serif;
+    font-size: 0.938rem; 
+}
+                    
+.input-signup {
+    display: block;
+    height: 2.5rem;
+    width: 15.313rem;
+    margin: 0.625rem auto;
+    padding: auto;
+    text-indent: 0.625rem;
+    background-color: #1821327a;
+    color: #a1a8b4;
+    border: 0px solid transparent;
+    border-radius: 0.625rem;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.938rem;
+}
+
+::placeholder {
+    color: #a1a8b4;
+    opacity: .35;
+}
+
+.input-signup:focus { 
+    outline: none !important;
+    border: 0px solid #1b5f8d;
+    box-shadow: 0 0 8px #237bb6;
+    }
+
+.signup-button {
+    height: 2.5rem;
+    width: 8rem;
+    margin: 3.125rem auto;
+    border: 2px solid #237bb62a;
+    border-radius: 0.75rem;
+    background-color: rgba(27, 95, 141, 0.1);
+    color: #a4a8bb;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.875rem;
+    font-weight: bold;
+    display: block;
+    scale: 1.0;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.signup-button:hover{
+    color: #237bb6;
+    background-color: rgba(27, 95, 141, 0.2);
+    transition: 0.2s ease-in-out;
+}
+
+.signup-button:active {
+    transform: scale(0.98);
+    transition: 0.2s ease-out
+}
+
+a {
+    text-decoration: none !important; 
+    color: inherit; 
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.p-already-user{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+}
+
+.link-already-user{
+    display: block;
+    color: #1e959b;
+    margin-top: 2px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    scale: 1.0;
+    transition: 0.2s ease-out;
+
+}
+
+.link-already-user:hover {
+    display: block;
+    color: #237bb6;
+    margin-top: 5px;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    transition: 0.2s ease-in;
+    ;
+
+}
+
+.link-already-user:visited {
+
+    color: #1b5f8d
+}
+.link-already-user:visited:hover {
+
+    color: #237bb6
+}
+
+
+/* ***##### INPUT DATA PAGE #####*** */
+
+.logout-button {
+    text-align: center;
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    height: 2.5rem;
+    width: 8rem;
+    border: 2px solid #237bb62a;
+    border-radius: 0.75rem; 
+    background-color: rgba(27, 95, 141, 0.1); 
+    color: #a4a8bb;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.875rem;
+    font-weight: bold;
+    display: block;
+    scale: 1.0;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.logout-button:hover {
+    color: #237bb6;
+    background-color: rgba(27, 95, 141, 0.2);
+    transition: 0.2s ease-in-out;
+}
+
+.logout-button:active {
+    transform: scale(0.98);
+    transition: 0.2s ease-out
+}
+
+.calculate-data-body {
+    height: 43.75rem !important;
+    width: 21.875rem !important;
+    margin: 5rem auto;
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    border-radius: 0.938rem;
+    background-color: rgba(0, 0, 0, 20);
+    box-shadow: 0.125rem 0.125rem 0.625rem #10141ab2;
+}
+
+
 
 .account-actions {margin-top: 20px;
     font-size: 13px;
@@ -120,32 +363,34 @@ label {
 }
 
 .input-number {
-    text-align: left;
-    text-indent: 8px;
-    font-size: medium;
-    width: 215px;
-    height: 30px;
-    border: 2px solid transparent;
-    margin-bottom: 5px;
-    border-radius: 15px;
-    background-color: #333333;
-    color: #CCCCCC;
+    display: block;
+    height: 2.5rem;
+    width: 15.313rem;
+    margin: 0.625rem auto;
+    padding: auto;
+    text-indent: 0.625rem;
+    background-color: #1821327a;
+    color: #a1a8b4;
+    border: 0px solid transparent;
+    border-radius: 0.625rem;
 
-}
-
-.input-number:focus {
-  border-color: transparent;
-  outline: none;
-}
-
-.input-number::placeholder {
-    color: #999999;
-    opacity: 0.5;
-    font-style: normal;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.938rem;
 }
 
 
-/* ***##### INPUT UNITS DATA #####*** */
+
+::placeholder {
+    color: #a1a8b4;
+    opacity: .35;
+}
+
+.input-number:focus { 
+    outline: none !important;
+    border: 0px solid #1b5f8d;
+    box-shadow: 0 0 8px #237bb6;
+    }
+
 
 .unit-labels {
     padding-bottom: 4%;
@@ -162,209 +407,95 @@ label {
     gap: 10px;
 }
 
+.calculate-button {
+    height: 2.5rem;
+    width: 8rem;
+    margin: 3.125rem auto;
+    border: 2px solid #237bb62a;
+    border-radius: 0.75rem;
+    background-color: rgba(27, 95, 141, 0.1);
+    color: #a4a8bb;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.875rem;
+    font-weight: bold;
+    display: block;
+    scale: 1.0;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
 
+.calculate-button:hover {
+    color: #237bb6;
+    background-color: rgba(27, 95, 141, 0.2);
+    transition: 0.2s ease-in-out;
+}
 
-                    /* *******##### OUTPUT FIELDS #####******* */
+.calculate-button:active {
+    transform: scale(0.98);
+    transition: 0.2s ease-out
+}
+
 
 /* ***##### RESULTS PAGE #####*** */
 
-.prediction-value {
+.result-body {
+    height: 43.75rem !important;
+    width: 21.875rem !important;
+    margin: 5rem auto;
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    border-radius: 0.938rem;
+    background-color: rgba(0, 0, 0, 20);
+    box-shadow: 0.125rem 0.125rem 0.625rem #10141ab2;
+}
+
+.results-form {
+    margin-top: 10rem;
+}
+
+.h1-prediction-value {
     margin-top: 5px;
     text-align: center;
     align-items: center;
     font-size: 75px;
 }
 
-
-
-                    /* *******##### BUTTONS #####******* */
-
-/* ***##### REGISTER BUTTON #####*** */
-
-.signup-button {
-display: block;
-margin: auto;
-margin-top: 25px;
-margin-bottom: 20px;
-background-color: #141414;
-color: #10CDE6;
-padding: 8px 73px;
-border: 1px solid #10CDE6;
-border-radius: 20px;
-cursor: pointer;
-font-size: 16px;
-transition: background-color 0.2s ease-out, transform 0.2s ease-out;
-font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
-font-weight: bold;
-
-}
-
-.signup-button:hover {
-background-color: #10CDE6;
-border: 1px solid #10CDE6;
-color: #050505;
-transform: scale(1.03);
-
-}
-
-.signup-button:active {
-transform: scale(0.95);
-
-}
-
-
-/* ### LOGIN BUTTON ### */
-
-.login-button {
-    display: block;
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    background-color: #141414;
-    color: #10CDE6;
-    padding: 8px 73px;
-    border: 1px solid #10CDE6;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.2s ease-out, transform 0.2s ease-out;
-    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
-    font-weight: bold;
-    
-}
-
-.login-button:hover {
-    background-color: #10CDE6;
-    border: 1px solid #10CDE6;
-    color: #050505;
-    transform: scale(1.03);
-    
-    
-}
-
-.login-button:active {
-    transform: scale(0.95);
-    
-}
-
-
-/* ### LOGOUT BUTTON ### */
-
-.logout-button {
-    position: fixed;
-    display: block;
-    align-items: left;
-    margin-top: 20px;
-    margin-bottom: 100px;
-    background-color: #141414;
-    color: #10CDE6;
-    padding: 5px 20px;
-    border: 1px solid #10CDE6;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 13px;
-    transition: background-color 0.4s ease, transform 0.2s ease;
-    font-family: Noto Sans;
-    font-weight: bold;
-    
-}
-
-.logout-button:hover {
-    background-color: #141414;
-    border: 1px solid crimson;
-    color: crimson;
-    transform: scale(1.03);  
-}
-
-.logout-button:active {
-    transform: scale(0.95);
-}
-
-
-/* ***##### CALCULATE BUTTON #####*** */
-                                    
-.calculate-button {
-    display: block;
-    margin: auto;
-    margin-top: 25px;
-    background-color: #141414;
-    color: #10CDE6;
-    padding: 8px 73px;
-    border: 1.5px solid #10CDE6;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.2s ease-out, transform 0.2s ease-out;
-    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
-    font-weight: bold;  
-}
-
-.calculate-button:hover {
-    background-color: #10CDE6;
-    border: 1px solid #10CDE6;
-    color: #050505;
-    transform: scale(1.03);   
-}
-
-.calculate-button:active {
-    transform: scale(0.95);  
-}
-
-
-/* ***##### RESET BUTTON #####*** */
-
-.reset-button {
-    display: block;
-    margin: auto;
-    align-items: center;
-    margin-top: 50px;
-    background-color: #141414;
-    color: #10CDE6;
-    padding: 8px 73px;
-    border: 1.5px solid #10CDE6;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.4s ease, transform 0.2s ease;
-    font-family: Noto Sans;
-    font-weight: bold;
-    
-}
-
-.reset-button:hover {
-    background-color: #10CDE6;
-    border: 2px solid #10CDE6;
-    color: #050505;
-    transform: scale(1.05);  
-}
-
-
-/* ***##### SIGNUP/SIGNIN LINKS #####*** */
-
-.sign-link {
-    display: block;
-    margin-top: 20px;
+.h2-prediction-value {
+    margin: 0px 1.875rem 1.875rem 1.875rem;
+    color: #1b5f8d;
     text-align: center;
-    font-size: 13px;
-    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+    font-family: "DM Sans", "Noto Sans", sans-serif;
+    font-size: 3rem; 
 }
 
-.sign-link a {position: inherit;
-    color: #198FB3;
-    text-decoration: none;
+
+.return-button {
+    height: 2.5rem;
+    width: 8rem;
+    margin: 3.125rem auto;
+    border: 2px solid #237bb62a;
+    border-radius: 0.75rem;
+    background-color: rgba(27, 95, 141, 0.1);
+    color: #a4a8bb;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.875rem;
     font-weight: bold;
+    display: block;
+    scale: 1.0;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
 
-.sign-link a:visited {
-    color: #198FB3;
-    text-decoration: none;
-    font-weight: bold;
+.return-button:hover {
+    color: #237bb6;
+    background-color: rgba(27, 95, 141, 0.2);
+    transition: 0.2s ease-in-out;
 }
 
-.sign-link a:hover {
-    color: #10CDE6;
-    text-decoration: underline;
+.return-button:active {
+    transform: scale(0.98);
+    transition: 0.2s ease-out
 }
+
 
 
 /* ***##### SLIDERS #####*** */
@@ -428,8 +559,6 @@ input:checked + .slider::before {
 
 
 
-                    /* *****### FLASH MESSAGES AND ALERTS ###***** */
-
 /* ### FLASH MESSAGES GENERAL SETTINGS ### */
 
 .flash-message {
@@ -444,21 +573,25 @@ input:checked + .slider::before {
 }
 
 
-/* ### SUCCESS FLASH MESSAGES ### */
+/* ### FLASH MESSAGES ### */
                     
 .flash-message.success {
     
-    color: #78FF6E;
-    ;
+color: #4caf50;
+    
+}
+
+.flash-message.warning {
+    
+color: #FFAE33;
+    
 }
 
 
-/* ### DANGER FLASH MESSAGES ### */
-
 .flash-message.danger {
     
-    color: #E6474C;
-    ;
+color: #E6474C;
+    
 }
 
 

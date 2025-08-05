@@ -1,19 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <head>
+        <!--Links referencing Google Fonts -->
+    
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1>Sign In</h1>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Varela+Round&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width"/>
+    <title>Carbsense AI Login</title>
+  </head>
+
+
+  <body class="sign-in-body">
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
@@ -22,44 +23,37 @@
 
         {% endif %}
 
-    {% endwith %}
+    {% endwith %}    
 
-    <form method="POST" class="general-form">
-        {{ login_form.hidden_tag() }}
+    <h1 id="title" class="h1-carbsense">CarbSense AI</h1>
+    <h2 class="h2-sign-in">Sign in to start</h2>
 
-        <div>
-            {{ login_form.username.label }}
-            {{ login_form.username(class="input-login") }}
-        </div>
-        
-        <div>
-            {{ login_form.password.label }}
-            {{ login_form.password(class="input-login") }}
-            
-        </div>
-        
-        <div>
-            
-            {% for error in login_form.username.errors %}
-            <span class="flash-message">{{ error }}</span>
-            {% endfor %}
-            
-            {% for error in login_form.password.errors %}
-            <span class="flash-message">{{ error }}</span>
-            {% endfor %}
-            
-            
-        </div>
+    <form method="post">
+      {{ login_form.hidden_tag() }}
 
-        {{login_form.submit_user(class="login-button")}}
+      {{ login_form.username.label(class="h3-login-credentials") }}
+      {{ login_form.username(class="input-login", placeholder="Enter your username") }}
 
-        <div class="sign-link">
-            <p class="account-actions">Don't have an account?</p> 
-            <a href="{{ url_for('main.signup') }}", class="sign-link">Sign Up</a>        
+      {{ login_form.password.label(class="h3-login-credentials") }}
+      {{ login_form.password(class="input-login", placeholder="Enter your password") }}
 
-        </div>
+      {% for error in login_form.username.errors %}
+        <span class="flash-message">{{ error }}</span>
+      {% endfor %}
+            
+      {% for error in login_form.password.errors %}
+        <span class="flash-message">{{ error }}</span>
+      {% endfor %}
+
+
+      {{login_form.submit_user(class="login-button")}}
+
+    <div class="resgister-container">
+    <p class="p-register-user">Not registered yet?</p> 
+    <a href="{{url_for('main.signup')}}" class="link-register-user">Create acount</a>
+    </div>
 
     </form>
-    
-</body>
+  </body>
 </html>
+

@@ -1,25 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carbs Estimator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <head>
+        <!--Links referencing Google Fonts -->
+    
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Varela+Round&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width"/>
+    <title>Carbsense AI Login</title>
+  </head>
+<body class="calculate-data-body">
 
     <form action="{{ url_for('main.logout') }}" method="get">
         <button type="submit" class="logout-button">Log Out</button>
     </form>
     
     
-    <h1>CarbSense AI</h1>
+    <h1 class="h1-carbsense">CarbSense AI</h1>
     <form  method= "post" class="general-form">
         
         <div class="toggle-group">

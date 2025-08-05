@@ -1,10 +1,12 @@
 import os
+from pathlib import Path
 import joblib
 import numpy as np
 from app.forms import InputForm, LoginForm, SignupForm
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
-from app.decorators.auth_decorators import login_required
 from app.db.user_queries import user_exists, insert_user, auth_user
+from .models import User
+from flask_login import login_user, logout_user, login_required
 
 
 
@@ -14,26 +16,35 @@ main= Blueprint("main", __name__)
 
 ### LOGIN ROUTE ###
 
+@main.route("/", methods=["GET"])
+def index():
+    return redirect(url_for("main.login"))
+
+
 @main.route("/login", methods=["GET", "POST"])
 def login():
-    login_form= LoginForm()
+    login_form = LoginForm()
 
     if login_form.validate_on_submit():
-
-        username= login_form.username.data
-        password= login_form.password.data
-
-        user_id= auth_user(username, password)
-        if user_id:
-            session["user_id"] = user_id
-            return redirect(url_for("main.index"))
+        print("datos recibidos")
         
+        username = login_form.username.data
+        password = login_form.password.data
+
+        user_id = auth_user(username, password)
+        print("validando usuario")
+
+        if user_id is not None:
+            user = User(user_id, username)
+            login_user(user)
+            return redirect(url_for("main.carbsense"))
         
         else:
             flash("Wrong username or password.", "danger")
             return redirect(url_for("main.login"))
 
-    return render_template("login.html", login_form=LoginForm())
+
+    return render_template("login.html", login_form=login_form)
 
 ### SIGNUP ROUTE ###
 
@@ -65,9 +76,9 @@ def signup():
 
 ### MAIN FORM ###
 
-@main.route("/", methods=["GET", "POST"])
+@main.route("/carbsense", methods=["GET", "POST"])
 @login_required
-def index():
+def carbsense():
 
     form= InputForm()
 
@@ -94,7 +105,7 @@ def index():
         session["prediction"] = f"{prediction:.2f}"
         return redirect(url_for("main.results"))
 
-    return render_template("index.html", form= form)
+    return render_template("carbsense.html", form= form)
 
 ### RESULTS ###
 
@@ -104,20 +115,18 @@ def results():
     prediction= session.pop("prediction", None)
     
     if prediction is None:
-        return redirect(url_for("main.index"))
+        return redirect(url_for("main.carbsense"))
     
     return render_template("results.html", prediction = prediction) 
+
 
 ### LOGOUT ###
 
 @main.route("/logout")
 @login_required
-
-
 def logout():
-    """Close session and redirect to /login"""
 
-    session.pop("user_id", None)
+    logout_user()
     return redirect(url_for("main.login"))
 
 
