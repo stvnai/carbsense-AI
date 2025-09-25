@@ -12,7 +12,8 @@ login_manager= LoginManager()
 csrf= CSRFProtect()
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, static_url_path = "/carbsense-ai/static")
+    app.config["APPLICATION_ROOT"] = "/carbsense-ai"
     app.secret_key= token
     login_manager.init_app(app)
     csrf.init_app(app)
